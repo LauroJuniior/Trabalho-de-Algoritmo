@@ -1,0 +1,114 @@
+def total():
+    print('cai aqui')
+def rota_objeto(lista= None):
+    while True:
+            print('\033[35m----------Celecione a rota----------\033[m')
+            print('|RS|','|De Rio de Janeiro até São Paulo|')
+            print('|SR|','|De São Paulo ate Rio de Janeiro|')
+            print('|BS|','|De Brasilia até São Paulo|')
+            print('|SB|','|De São Paulo até Brasilia|')
+            print('|BR|','|De Brasilia até Rio de Janeiro|')
+            print('|RB|','|De Rio de Janeiro até Brasilia|')
+
+            rotas = input('>>')
+            try:
+                for k in range(1):
+                    k += 1
+                    if(rotas == 'RS'):
+                        apg = 1
+                        total()
+                    elif (rotas == 'SR'):
+                        apg = 1
+                        total()
+                    elif (rotas == 'BS'):
+                        apg = 1.2
+                        total()
+                    elif (rotas == 'SB'):
+                        apg = 1.2
+                        total()
+                    elif (rotas == 'BR'):
+                        apg = 1.5
+                        total()
+                    elif (rotas == 'RB'):
+                        apg = 1.5
+                        total()
+                else:
+                    print('\033[33mVoce digitou uma rota que nao existe\033[m')
+                    continue
+  
+            except():
+                lista.append(0)
+                print('\033[33mVoce digitou uma rota que nao existe\033[m')
+                continue
+
+def peso_objeto(lista):
+    i = 0
+    while True:
+        peso = float(input('Digite o peso em KG do seu objeto: '))
+        try:
+            for i in range(1):
+                i += 1
+                if (peso < 0.1):
+                    mult = 1
+                    rota_objeto()
+                elif (0.1 <= peso < 1):
+                    mult = 1.5
+                    rota_objeto()
+                elif (1 <= peso < 10):
+                    mult = 2
+                    rota_objeto()
+                elif (10 <= peso < 30):
+                    mult = 3
+                    rota_objeto()
+                elif (peso > 30):
+                    print('\033[31mVoce digitou o peso com um valor nao objeto\033[m')
+                    continue
+        except(ValueError, TypeError):
+            lista.append(peso)
+            print('\033[31mVoce digitou o peso com um valor nao objeto\033[m')
+
+
+def main(lista):
+    dimensao = lista[0]*lista[1]*lista[2]
+    peso_objeto(0)#chamando a funsao
+
+def dimen_object():
+    x = 0
+    lista = []*3
+    print('\033[34mBem Vindo a Companhia de Logistica Lauro Junior\033[m')
+    while True:
+        try:
+            for x in range(1):
+                x += 1
+                alt = int(input('Digite uma altura em cm: '))
+                lista.append(alt)
+                larg = int(input('Digite uma largura em cm: '))
+                lista.append(larg)
+                comp = int(input('Digite um comprimento em cm: '))
+                lista.append(comp)
+
+        except(ValueError, TypeError):
+             print('\033[31mVoce digitou alguma dimensao do objeto com valor nao numerico\033[m')
+             lista.append(0)
+
+        for y in range(len(lista)):
+            if(lista[y]==0):
+                if(y==0):
+                    alt = int(input('Digite uma altura em cm: '))
+                    lista[y] = (alt)
+                    larg = int(input('Digite uma largura em cm: '))
+                    lista.append(larg)
+                    comp = int(input('Digite um comprimento em cm: '))
+                    lista.append(comp)
+                if(y==1):
+                    larg = int(input('Digite uma largura em cm: '))
+                    lista[y] = (larg)
+                    comp = int(input('Digite um comprimento em cm: '))
+                    lista.append(comp)
+                if(y==2):
+                    comp = int(input('Digite um comprimento em cm: '))
+                    lista[y] = (comp)
+        main(lista)
+        rota_objeto()
+dimen_object()
+
