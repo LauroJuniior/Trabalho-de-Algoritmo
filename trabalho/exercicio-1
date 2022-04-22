@@ -1,0 +1,19 @@
+print('Bem Vindo a Loja do Lauro\n')
+vp = int(input('Entre com o valor do produto: '))#valor do produto
+vq = int(input('Entre com o valor da quantidade: '))#valor da quantidade
+
+vt = vp * vq#valor total sem desconto
+if(vq < 9):
+    print('O valor sem desconto foi: R${}'.format(vt))
+elif(vq > 10 and vq < 99):
+   dsc = vt -(vt * 0.05)
+   print('O valor sem desconto foi: R${:.2f}'.format(vt))
+   print('O valor com desconto foi: R${:.2f}       (desconto de 5%)'.format(dsc))
+elif(vq > 100 and vq < 999):
+    dsc1 = vt -(vt * 0.1)
+    print('O valor sem desconto foi: R${:.2f}'.format(vt))
+    print('O valor com desconto foi: R${:.2f}     (desconto de 10%)'.format(dsc1))
+else:
+    dsc2 = vt - (vt * 0.15)
+    print('O valor sem desconto foi: R${:.2f}'.format(vt))
+    print('O valor com desconto foi: R${:.2f}     (desconto de 15%)'.format(dsc2))
