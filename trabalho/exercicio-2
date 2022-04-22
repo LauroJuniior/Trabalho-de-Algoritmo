@@ -1,0 +1,62 @@
+print('Bem vindo a Lanchonete do Lauro\n')
+print('********************CARDÁPIO********************')
+print('| Código |        Descrição         | Valor |')
+print('|   100  |     Cachorro Quente      |  9,00 |')
+print('|   101  |  Cachorro Quente Duplo   | 11,00 |')
+print('|   102  |           X-Egg          | 12,00 |')               #cardapio
+print('|   103  |         X-Salada         | 12,00 |')
+print('|   104  |          X-Bancon        | 14,00 |')
+print('|   105  |          X-Tudo          | 17,00 |')
+print('|   200  |    Refrigerante Lata     |  5,00 |')
+print('|   201  |       Chá Gelado         |  4.00 |')
+soma = 0#iniciando a variavel soma = 0
+while True:#usado para deixar o programa em loop
+    cod = int(input('Entre com o código desejado: '))#pedindo o codigo para o usuario
+
+    if(cod == 100):
+        print('Voce pediu um Cachorro Quente no valor de 9,00')#mostrando ao usuario o valor do pedido
+        soma =+ 9#adicionando o valor do produto a variavel soma
+        pd = int(input('Deseja pedir mais alguma coisa?\n1 - Sim\n0 - Não\n>>'))#perguntando se o usuario quer fazer algum pedido
+
+    elif(cod == 101):
+        print('Voce pediu um Cachorro Quente Duplo no valor de 11,00')
+        soma = soma + 11#adicionado o valor soma anterior e somando com o valor do outro produto
+        pd = int(input('Deseja pedir mais alguma coisa?\n1 - Sim\n0 - Não\n>>'))
+
+    elif(cod == 102):
+        print('Voce pediu um X-egg no valor de 12,00')
+        soma += 12
+        pd = int(input('Deseja pedir mais alguma coisa?\n1 - Sim\n0 - Não\n>>'))
+
+    elif(cod == 103):
+        print('Voce pediu um X-Tudo no valor de 17,00')
+        soma += 17
+        pd = int(input('Deseja pedir mais alguma coisa?\n1 - Sim\n0 - Não\n>>'))
+
+    elif(cod == 200):
+        print('Voce pediu um Refrigerante Lata no valor de 5,00')
+        soma += 5
+        pd = int(input('Deseja pedir mais alguma coisa?\n1 - Sim\n0 - Não\n>>'))
+
+    elif (cod == 201):
+        print('Voce pediu um Chá Gelado no valor de 4,00')
+        soma += 4
+        pd = int(input('Deseja pedir mais alguma coisa?\n1 - Sim\n0 - Não\n>>'))
+
+    else:#o else e usado para caso o usuario digite algum codigo que nao e valido
+        print('Opção invalida')
+        continue#usado para retornar para o inicio
+
+    if (cod == 105):
+        print('Voce pediu um X-Salada no valor de 12,00')
+        soma += 12
+        pd = int(input('Deseja pedir mais alguma coisa?\n1 - Sim\n0 - Não\n>>'))
+
+    elif (cod == 104):
+        print('Voce pediu um X-Bacon no valor de 14,00')
+        soma += 14
+        pd = int(input('Deseja pedir mais alguma coisa?\n1 - Sim\n0 - Não\n>>'))
+
+    if(pd == 0):#caso o usuario digitar '0' finalizar a operaçao e mostrar o valor total do pedido
+        print('O valor a ser pago é de {:.2f}'.format(soma))
+        break
