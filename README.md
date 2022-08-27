@@ -1,3 +1,3 @@
 # Trabalho-de-Algoritmo
- trabalho de logica de programação
+Trabalhio de logica da programação
  Desenvovido em Python
